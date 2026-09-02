@@ -538,3 +538,27 @@ h3 {
     }
   }
 }
+/* --- Fixes ------------------------------------------------------ */
+
+/* Buttons inside prose must not inherit prose link styling */
+.prose a.button,
+.prose a.button:hover {
+  color: #fbfaf8;
+  text-decoration: none;
+}
+
+.prose a.button:hover {
+  background: var(--oxblood-lift);
+}
+
+/* Long-form pages: bring the container in to match the text column,
+   so the whitespace reads as a margin rather than an empty gap. */
+.wrap--text {
+  max-width: 46rem;
+}
+
+.wrap--text .prose,
+.wrap--text .lede,
+.wrap--text .page-title {
+  max-width: 100%;
+}
