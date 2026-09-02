@@ -1,0 +1,16 @@
+# Old WordPress URLs -> new structure.
+# Posts kept their root-level slugs, so they need no redirect.
+
+/book-me/          /book/         301
+/about-me/         /about/        301
+/what-i-do/        /projects/     301
+/contact-me/       /book/         301
+/training/         /              301
+
+# WordPress plumbing that should stop resolving
+/wp-admin/*        /              301
+/wp-login.php      /              301
+/feed/             /feed.xml      301
+/category/*        /blog/         301
+/tag/*             /blog/         301
+/author/*          /about/        301

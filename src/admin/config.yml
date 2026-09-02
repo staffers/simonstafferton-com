@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: OWNER/simonstafferton-com   # <-- change to your GitHub repo
+  branch: main
+  base_url: https://simonstafferton.com
+  auth_endpoint: oauth
+
+publish_mode: simple
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "posts"
+    label: "Writing"
+    label_singular: "Post"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    summary: "{{title}} — {{year}}-{{month}}-{{day}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false, hint: "One or two lines. Shown on the writing list and the homepage." }
+      - { label: "Body", name: "body", widget: "markdown" }

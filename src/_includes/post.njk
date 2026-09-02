@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+<article class="wrap">
+  <h1 class="page-title">{{ title }}</h1>
+  <p class="post__meta">
+    <time datetime="{{ page.date | isoDate }}">{{ page.date | displayDate }}</time>
+    · {{ content | readingTime }} min read
+  </p>
+  <div class="prose post__body">
+    {{ content | safe }}
+  </div>
+  <p style="margin-block-start:3rem">
+    <a class="textlink" href="/blog/">All writing</a>
+  </p>
+</article>

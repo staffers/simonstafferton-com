@@ -1,0 +1,93 @@
+---
+layout: base.njk
+description: "Simon Stafferton works on technical SEO, analytics and direct-booking conversion for student accommodation and build-to-rent operators."
+---
+
+<section class="wrap hero">
+  <h1 class="hero__statement">
+    I make housing websites <em>findable</em>, and I make the numbers behind them
+    trustworthy.
+  </h1>
+
+  <p class="hero__sub">
+    Twenty years in digital, the last ten of them almost entirely in student
+    accommodation and build-to-rent. Technical SEO, analytics that actually
+    reconcile, and the unglamorous work of getting more people to book direct.
+  </p>
+
+  <div class="hero__actions">
+    <a class="button" href="/book/">Book a call</a>
+    <a class="textlink" href="/about/">More about how I work</a>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section__head">
+    <h2>Writing</h2>
+  </div>
+
+  <ul class="entries">
+    {% for post in collections.posts | reverse %}
+      {% if loop.index0 < 4 %}
+        <li class="entry">
+          <span class="entry__date">
+            <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate }}</time>
+          </span>
+          <div>
+            <h3 class="entry__title">
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+            {% if post.data.excerpt %}
+              <p class="entry__excerpt">{{ post.data.excerpt }}</p>
+            {% endif %}
+          </div>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <p style="margin-block-start:2rem">
+    <a class="textlink" href="/blog/">Everything I have written</a>
+  </p>
+</section>
+
+<section class="wrap section">
+  <div class="section__head">
+    <h2>Things I have built</h2>
+    <p class="lede" style="margin-block-start:0.75rem">
+      Mostly tools I wanted for my own work and then kept going with.
+    </p>
+  </div>
+
+  <ul class="projects">
+    <li class="project">
+      <h3 class="project__name"><a href="https://abexis.app">ABexis</a></h3>
+      <p class="project__what">
+        A/B testing rendered at the edge, so your experiments stop wrecking your
+        Core Web Vitals.
+      </p>
+    </li>
+    <li class="project">
+      <h3 class="project__name">
+        <a href="https://directorsdraw.uk">Directors Draw</a>
+      </h3>
+      <p class="project__what">
+        A calculator for UK company directors working out what they actually take
+        home across salary, dividends and pension.
+      </p>
+    </li>
+    <li class="project">
+      <h3 class="project__name">
+        <a href="https://abtests.co.uk">abtests.co.uk</a>
+      </h3>
+      <p class="project__what">
+        Notes on conversion rate optimisation, with the examples playable rather
+        than described.
+      </p>
+    </li>
+  </ul>
+
+  <p style="margin-block-start:2rem">
+    <a class="textlink" href="/projects/">The rest of them</a>
+  </p>
+</section>

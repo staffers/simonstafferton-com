@@ -1,0 +1,72 @@
+---
+layout: base.njk
+title: Book a call
+permalink: /book/
+description: "Book a call with Simon Stafferton — technical SEO and analytics for student accommodation and build-to-rent."
+---
+<div class="wrap">
+  <h1 class="page-title">Book a call</h1>
+  <p class="lede" style="margin-block-start:1.25rem">
+    Thirty minutes, no charge. Bring a problem and I will tell you what I think,
+    including if the answer is that you do not need me.
+  </p>
+
+  <div class="booking">
+    <div id="cal-inline">
+      <noscript>
+        <div class="booking__fallback">
+          <p>
+            The booking calendar needs JavaScript. You can also book directly at
+            <a class="textlink" href="https://cal.com/{{ site.cal.handle }}/{{ site.cal.event }}"
+              >cal.com/{{ site.cal.handle }}/{{ site.cal.event }}</a
+            >.
+          </p>
+        </div>
+      </noscript>
+    </div>
+  </div>
+
+  <p class="prose" style="margin-block-start:2rem">
+    If a call is not what you need, email is fine too — I am
+    <a href="mailto:si@stafferton.digital">si@stafferton.digital</a>.
+  </p>
+</div>
+
+<script>
+  (function (C, A, L) {
+    let p = function (a, ar) { a.q.push(ar); };
+    let d = C.document;
+    C.Cal = C.Cal || function () {
+      let cal = C.Cal; let ar = arguments;
+      if (!cal.loaded) {
+        cal.ns = {}; cal.q = cal.q || [];
+        d.head.appendChild(d.createElement("script")).src = A;
+        cal.loaded = true;
+      }
+      if (ar[0] === L) {
+        const api = function () { p(api, arguments); };
+        const namespace = ar[1];
+        api.q = api.q || [];
+        typeof namespace === "string"
+          ? (cal.ns[namespace] = api) && p(api, ar)
+          : p(cal, ar);
+        return;
+      }
+      p(cal, ar);
+    };
+  })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", { origin: "https://cal.com" });
+  Cal("inline", {
+    elementOrSelector: "#cal-inline",
+    calLink: "{{ site.cal.handle }}/{{ site.cal.event }}",
+    config: { layout: "month_view" }
+  });
+  Cal("ui", {
+    hideEventTypeDetails: false,
+    layout: "month_view",
+    cssVarsPerTheme: {
+      light: { "cal-brand": "#7a2e3b" }
+    }
+  });
+</script>

@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: Writing
+permalink: /blog/
+description: "Writing by Simon Stafferton on technical SEO, analytics and conversion."
+---
+<div class="wrap">
+  <h1 class="page-title">Writing</h1>
+  <p class="lede" style="margin-block-start:1.25rem">
+    Notes on search, measurement and the occasional thing that annoyed me enough
+    to write about.
+  </p>
+
+  <ul class="entries" style="margin-block-start:3rem">
+    {% for post in collections.posts | reverse %}
+      <li class="entry">
+        <span class="entry__date">
+          <time datetime="{{ post.date | isoDate }}">{{ post.date | displayDate }}</time>
+        </span>
+        <div>
+          <h2 class="entry__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+          {% if post.data.excerpt %}<p class="entry__excerpt">{{ post.data.excerpt }}</p>{% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

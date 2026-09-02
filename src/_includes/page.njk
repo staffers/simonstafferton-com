@@ -1,0 +1,10 @@
+---
+layout: base.njk
+---
+<div class="wrap">
+  <h1 class="page-title">{{ title }}</h1>
+  {% if lede %}<p class="lede" style="margin-block-start:1.25rem">{{ lede }}</p>{% endif %}
+  <div class="prose" style="margin-block-start:2.5rem">
+    {{ content | safe }}
+  </div>
+</div>
