@@ -10,7 +10,7 @@ export default {
   // Cal.com — replace with your actual handle and event slug.
   // Find these at cal.com/event-types; the URL is cal.com/<handle>/<event>
   cal: {
-    handle: "simons-stafferton",
+    handle: "simon-stafferton",
     event: "intro",
   },
 
