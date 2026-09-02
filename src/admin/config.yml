@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: OWNER/simonstafferton-com   # <-- change to your GitHub repo
+  repo: staffers/simonstafferton-com   # <-- change to your GitHub repo
   branch: main
   base_url: https://simonstafferton.com
   auth_endpoint: oauth
