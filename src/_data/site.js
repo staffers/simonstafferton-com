@@ -10,7 +10,7 @@ export default {
   // Cal.com — replace with your actual handle and event slug.
   // Find these at cal.com/event-types; the URL is cal.com/<handle>/<event>
   cal: {
-    handle: "simonstafferton",
+    handle: "simons-stafferton",
     event: "intro",
   },
 
@@ -22,7 +22,7 @@ export default {
   ],
 
   social: {
-    twitter: "https://twitter.com/stafferton/",
+    linkedin: "https://www.linkedin.com/in/stafferton/",
     instagram: "https://www.instagram.com/simonstafferton/",
     agency: "https://stafferton.digital",
   },
